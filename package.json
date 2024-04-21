@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "serve dist -s -n -L -p $PORT",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,8 +16,7 @@
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-input-mask": "^2.0.4",
-    "serve": "^14.2.0"
+    "react-input-mask": "^2.0.4"
   },
   "devDependencies": {
     "postcss": "^8",
