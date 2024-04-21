@@ -9,11 +9,11 @@ export default function Home() {
 		<div className="w-full lg:mr-5">
 			<Information>
 				<H2>
-					Workshop IA
+					Workshop Inteligência Artificial
 				</H2>
 				<span className="flex mt-4">
-					<Calendar color="primary" />
-					<span className="mx-1 text-blue-500">05/06/2024 • 14:00</span>
+					<Calendar />
+					<span className="mx-1 text-indigo-600">05/06/2024 • 14:00</span>
 				</span>
 				<span className="flex mt-2">
 					<Location />
@@ -23,7 +23,7 @@ export default function Home() {
 			<hr className="border-gray-400" />
 			<Information>
 				<H3>Local</H3>
-				<span className="text-blue-500">
+				<span className="text-indigo-600">
 					Auditório da Escola Modelo
 				</span>
 				<br />
