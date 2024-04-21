@@ -28,7 +28,7 @@ export default function Home() {
 				</span>
 				<br />
 				<span>
-					Av. Ernestina Batita, 25
+					Av. Ernestina Batista, 25
 				</span>
 				<br />
 				<span>

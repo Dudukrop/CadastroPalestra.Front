@@ -20,7 +20,7 @@ export default function Cadastro() {
 				<TextInput label="E-mail" value={Email} onchange={setEmail} />
 				<TextInput label="Confirmação do E-mail" value={ConfirmacaoEmail} onchange={setConfirmacaoEmail} />
 				<TextInput mask="(99) 99999-9999" placeholder="(00) 00000-0000" label="Telefone" value={Telefone} onchange={setTelefone} />
-				<TextInput label="Instituição" value={Instituicao} onchange={setConfirmacaoEmail} />
+				<TextInput label="Instituição" value={Instituicao} onchange={setInstituicao} />
 				<div className="w-full h-20 flex justify-end items-center">
 					<BtnCadastro>PARTICIPAR</BtnCadastro>
 				</div>
