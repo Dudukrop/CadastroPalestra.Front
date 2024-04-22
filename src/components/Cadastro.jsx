@@ -22,7 +22,7 @@ export default function Cadastro() {
 
 	function CadastrarParticipante() {
 		setSending(true)
-		fetch("cadastropalestraapi-production.up.railway.app/Home/Post", {
+		fetch("https://cadastropalestraapi-production.up.railway.app/Home/Post", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json'
