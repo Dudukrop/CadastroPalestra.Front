@@ -5,7 +5,12 @@ export default function TextInput(props) {
 		<div className="h-20 my-3 min-w-40 w-full lg:w-[49%]">
 			<label className="relative bottom-1 text-gray-600 font-bold text-xs">
 				{props.label}
-				<span className="text-red-600 text-lg ml-1 relative top-1">*</span>
+				{
+					props.obrigatorio ?
+						<span className="text-red-600 text-lg ml-1 relative top-1">*</span>
+						:
+						<span className="text-red-600 text-lg ml-1 relative top-1"></span>
+				}
 			</label>
 			<InputMask
 				mask={props.mask}
@@ -16,7 +21,7 @@ export default function TextInput(props) {
 				placeholder={props.placeholder}
 			/>
 			{
-				props.value == "" ?
+				props.value == "" && props.obrigatorio ?
 					<span className="text-xs text-red-600">Campo obrigatório</span>
 					:
 					""
