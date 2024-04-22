@@ -28,7 +28,7 @@ export default function Cadastro() {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				name: Nome + Sobrenome,
+				name: Nome + ' ' + Sobrenome,
 				email: Email,
 				confirmacaoEmail: ConfirmacaoEmail,
 				contato: FormatarTelefone(Telefone),
