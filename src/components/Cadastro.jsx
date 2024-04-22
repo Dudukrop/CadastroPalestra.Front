@@ -6,12 +6,12 @@ import Loop from '@mui/icons-material/Loop';
 import Notificacao from "./notificacoes/Notificacao";
 
 export default function Cadastro() {
-	const [Nome, setNome] = useState();
-	const [Sobrenome, setSobrenome] = useState();
-	const [Email, setEmail] = useState();
-	const [ConfirmacaoEmail, setConfirmacaoEmail] = useState();
-	const [Telefone, setTelefone] = useState();
-	const [Instituicao, setInstituicao] = useState();
+	const [Nome, setNome] = useState("");
+	const [Sobrenome, setSobrenome] = useState("");
+	const [Email, setEmail] = useState("");
+	const [ConfirmacaoEmail, setConfirmacaoEmail] = useState("");
+	const [Telefone, setTelefone] = useState("");
+	const [Instituicao, setInstituicao] = useState("");
 	const [Error, setErro] = useState("");
 	const [Sending, setSending] = useState(false);
 	const [Notification, setNotification] = useState(false);
@@ -29,6 +29,13 @@ export default function Cadastro() {
 		setInstituicao("")
 	}
 
+	function ValidarNome(nome) {
+		if (nome == "")
+			return ""
+
+		return `${Nome} ${Sobrenome}`.trim()
+	}
+
 	function CadastrarParticipante() {
 		setSending(true)
 		fetch("https://workshop-ia.up.railway.app/Home/Post", {
@@ -37,7 +44,7 @@ export default function Cadastro() {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				name: Nome + ' ' + Sobrenome,
+				name: ValidarNome(Nome),
 				email: Email,
 				confirmacaoEmail: ConfirmacaoEmail,
 				contato: FormatarTelefone(Telefone),
