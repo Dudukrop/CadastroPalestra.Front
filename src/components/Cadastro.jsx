@@ -58,7 +58,7 @@ export default function Cadastro() {
 	}
 
 	return (
-		<div className="mt-8 shadow-sm p-5 rounded-3xl shadow-gray-600 w-full lg:w-11/12">
+		<div className="mt-8 shadow-sm p-5 rounded-3xl shadow-gray-600 w-full pb-10 lg:w-11/12">
 			<H3>Informação do Participante</H3>
 			<div className="flex flex-wrap relative top-4 justify-between">
 				<TextInput obrigatorio={true} label="Nome" value={Nome} onchange={setNome} />
