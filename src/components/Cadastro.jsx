@@ -76,7 +76,7 @@ export default function Cadastro() {
 							<BtnCadastro onclick={CadastrarParticipante}>PARTICIPAR</BtnCadastro>
 					}
 					<span className="text-xs text-red-600 relative top-2">{Error}</span>
-					<Notificacao open={Notification} close={setNotification} message="Participação feita com sucesso!" />
+					<Notificacao open={Notification} close={setNotification} message="Inscrição feita com sucesso!" />
 				</div>
 			</div>
 		</div>

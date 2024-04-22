@@ -13,7 +13,7 @@ export default function Home() {
 				</H2>
 				<span className="flex mt-4">
 					<Calendar />
-					<span className="mx-1 text-indigo-600">05/06/2024 • 14:00</span>
+					<span className="mx-1 text-indigo-600">04/06/2024 • 14:00</span>
 				</span>
 				<span className="flex mt-2">
 					<Location />
