@@ -12,17 +12,17 @@ export default function Cadastro() {
 	const [ConfirmacaoEmail, setConfirmacaoEmail] = useState();
 	const [Telefone, setTelefone] = useState();
 	const [Instituicao, setInstituicao] = useState();
-	const [Error, setErro] = useState();
+	const [Error, setErro] = useState("");
 	const [Sending, setSending] = useState(false);
 	const [Notification, setNotification] = useState(false);
 
 	function FormatarTelefone(telefone) {
-		return telefone?.replace('(', '').replace(')', '').replace('-', '').replace(' ', '');
+		return telefone?.replace('(', '').replace(')', '').replace('-', '').replace(' ', '').replace('_', '');
 	}
 
 	function CadastrarParticipante() {
 		setSending(true)
-		fetch("https://cadastropalestraapi-production.up.railway.app/Home/Post", {
+		fetch("cadastropalestraapi-production.up.railway.app/Home/Post", {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json'
@@ -38,12 +38,12 @@ export default function Cadastro() {
 			.then(response => {
 				if (!response.ok) {
 					response.json().then(json => {
-						console.log(json)
-						json.errors.Instituicao !== undefined ? setErro(json.errors.Instituicao[0]) : ""
-						json.errors.Contato !== undefined ? setErro(json.errors.Contato[0]) : ""
-						json.errors.ConfirmacaoEmail !== undefined ? setErro(json.errors.ConfirmacaoEmail[0]) : ""
-						json.errors.Email !== undefined ? setErro(json.errors.Email[0]) : ""
-						json.errors.Name !== undefined ? setErro(json.errors.Name[0]) : ""
+						json.errors?.Instituicao !== undefined ? setErro(json.errors.Instituicao[0]) : ""
+						json.errors?.Contato !== undefined ? setErro(json.errors.Contato[0]) : ""
+						json.errors?.ConfirmacaoEmail !== undefined ? setErro(json.errors.ConfirmacaoEmail[0]) : ""
+						json.errors?.Email !== undefined ? setErro(json.errors.Email[0]) : ""
+						json.errors?.Name !== undefined ? setErro(json.errors.Name[0]) : ""
+						json.exception !== undefined ? setErro(json.exception[0]) : ""
 					})
 				}
 				else {
@@ -53,7 +53,7 @@ export default function Cadastro() {
 				setSending(false)
 			})
 			.catch(error => {
-				console.error('Erro:', error);
+				setErro("Não foi possível adicionar o participante. Tente novamente mais tarde.")
 			});
 	}
 

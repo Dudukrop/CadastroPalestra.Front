@@ -20,12 +20,6 @@ export default function TextInput(props) {
 				type="text"
 				placeholder={props.placeholder}
 			/>
-			{
-				props.value == "" && props.obrigatorio ?
-					<span className="text-xs text-red-600">Campo obrigatório</span>
-					:
-					""
-			}
 		</div >
 	)
 }
