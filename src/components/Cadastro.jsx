@@ -20,6 +20,15 @@ export default function Cadastro() {
 		return telefone?.replace('(', '').replace(')', '').replace('-', '').replace(' ', '').replace('_', '');
 	}
 
+	function LimparCampos() {
+		setNome("")
+		setSobrenome("")
+		setEmail("")
+		setConfirmacaoEmail("")
+		setTelefone("")
+		setInstituicao("")
+	}
+
 	function CadastrarParticipante() {
 		setSending(true)
 		fetch("https://workshop-ia.up.railway.app/Home/Post", {
@@ -49,6 +58,7 @@ export default function Cadastro() {
 				else {
 					setErro("")
 					setNotification(true)
+					LimparCampos()
 				}
 				setSending(false)
 			})
@@ -71,7 +81,7 @@ export default function Cadastro() {
 					{
 						Sending
 							?
-							<BtnCadastro>{<Loop />}</BtnCadastro>
+							<BtnCadastro>{<Loop className="animate-spin" />}</BtnCadastro>
 							:
 							<BtnCadastro onclick={CadastrarParticipante}>PARTICIPAR</BtnCadastro>
 					}
